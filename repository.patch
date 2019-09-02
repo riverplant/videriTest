@@ -1,0 +1,1364 @@
+diff --git a/Tests/videriTest/.classpath b/Tests/videriTest/.classpath
+new file mode 100644
+index 0000000..b2ff1d1
+--- /dev/null
++++ b/Tests/videriTest/.classpath
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" path="src/main/resources"/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
++</classpath>
+diff --git a/Tests/videriTest/.project b/Tests/videriTest/.project
+new file mode 100644
+index 0000000..27d86e8
+--- /dev/null
++++ b/Tests/videriTest/.project
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>videriTest</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.springframework.ide.eclipse.boot.validation.springbootbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
++	</natures>
++</projectDescription>
+diff --git a/Tests/videriTest/.settings/org.eclipse.core.resources.prefs b/Tests/videriTest/.settings/org.eclipse.core.resources.prefs
+new file mode 100644
+index 0000000..4c28b1a
+--- /dev/null
++++ b/Tests/videriTest/.settings/org.eclipse.core.resources.prefs
+@@ -0,0 +1,4 @@
++eclipse.preferences.version=1
++encoding//src/main/java=UTF-8
++encoding//src/test/java=UTF-8
++encoding/<project>=UTF-8
+diff --git a/Tests/videriTest/.settings/org.eclipse.jdt.core.prefs b/Tests/videriTest/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..d59e09c
+--- /dev/null
++++ b/Tests/videriTest/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,5 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
++org.eclipse.jdt.core.compiler.compliance=1.8
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.source=1.8
+diff --git a/Tests/videriTest/.settings/org.eclipse.m2e.core.prefs b/Tests/videriTest/.settings/org.eclipse.m2e.core.prefs
+new file mode 100644
+index 0000000..14b697b
+--- /dev/null
++++ b/Tests/videriTest/.settings/org.eclipse.m2e.core.prefs
+@@ -0,0 +1,4 @@
++activeProfiles=
++eclipse.preferences.version=1
++resolveWorkspaceProjects=true
++version=1
+diff --git a/Tests/videriTest/.settings/org.springframework.ide.eclipse.prefs b/Tests/videriTest/.settings/org.springframework.ide.eclipse.prefs
+new file mode 100644
+index 0000000..e587c65
+--- /dev/null
++++ b/Tests/videriTest/.settings/org.springframework.ide.eclipse.prefs
+@@ -0,0 +1,2 @@
++boot.validation.initialized=true
++eclipse.preferences.version=1
+diff --git a/Tests/videriTest/pom.xml b/Tests/videriTest/pom.xml
+new file mode 100644
+index 0000000..07a8533
+--- /dev/null
++++ b/Tests/videriTest/pom.xml
+@@ -0,0 +1,106 @@
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++	<modelVersion>4.0.0</modelVersion>
++
++	<groupId>com.river</groupId>
++	<artifactId>videriTest</artifactId>
++	<version>0.0.1-SNAPSHOT</version>
++	<packaging>jar</packaging>
++
++	<name>videriTest</name>
++	<url>http://maven.apache.org</url>
++	<parent>
++		<groupId>org.springframework.boot</groupId>
++		<artifactId>spring-boot-starter-parent</artifactId>
++		<version>2.1.2.RELEASE</version>
++		<relativePath /> <!-- lookup parent from repository -->
++	</parent>
++	<properties>
++		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++		<maven.compiler.source>1.8</maven.compiler.source>
++		<maven.compiler.target>1.8</maven.compiler.target>
++		<java.version>1.8</java.version>
++	</properties>
++
++	<dependencies>
++	<!-- springboot web -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-web</artifactId>
++		</dependency>
++
++		<!-- springboot test -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-test</artifactId>
++		</dependency>
++		<!-- String 转Json -->
++		<dependency>
++			<groupId>com.google.code.gson</groupId>
++			<artifactId>gson</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-jdbc</artifactId>
++		</dependency>
++		<!-- aop -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-aop</artifactId>
++		</dependency>
++		<!-- JPA -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-data-jpa</artifactId>
++		</dependency>
++		<!-- cache -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-cache</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>mysql</groupId>
++			<artifactId>mysql-connector-java</artifactId>
++			<version>5.1.8</version>
++		</dependency>
++		 <!-- Utils -->
++        <dependency>
++            <groupId>org.apache.commons</groupId>
++            <artifactId>commons-io</artifactId>
++            <version>1.3.2</version>
++        </dependency>
++		<dependency>
++			<groupId>junit</groupId>
++			<artifactId>junit</artifactId>
++			<scope>test</scope>
++		</dependency>
++		<!-- swagger -->
++		<dependency>
++			<groupId>io.springfox</groupId>
++			<artifactId>springfox-swagger2</artifactId>
++			<version>2.9.2</version>
++		</dependency>
++		<dependency>
++			<groupId>io.springfox</groupId>
++			<artifactId>springfox-swagger-ui</artifactId>
++			<version>2.9.2</version>
++		</dependency>
++	</dependencies>
++	<build>
++		<plugins>
++			<plugin>
++				<groupId>org.springframework.boot</groupId>
++				<artifactId>spring-boot-maven-plugin</artifactId>
++				<executions>
++					<execution>
++						<goals>
++							<goal>repackage</goal>
++						</goals>
++					</execution>
++				</executions>
++			</plugin>
++		</plugins>
++		<finalName>videriTest</finalName>
++	</build>
++</project>
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/App.java b/Tests/videriTest/src/main/java/com/river/videriTest/App.java
+new file mode 100644
+index 0000000..d07a7ac
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/App.java
+@@ -0,0 +1,52 @@
++package com.river.videriTest;
++
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.Arrays;
++
++import org.springframework.boot.CommandLineRunner;
++import org.springframework.boot.SpringApplication;
++import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.context.annotation.Bean;
++
++import com.river.videriTest.domain.Novel;
++import com.river.videriTest.domain.Writer;
++import com.river.videriTest.repository.NovelRepository;
++import com.river.videriTest.repository.WriterRepository;
++
++import springfox.documentation.swagger2.annotations.EnableSwagger2;
++
++/**
++ * 
++ * @author riverplant
++ *
++ */
++@SpringBootApplication
++@EnableSwagger2
++public class App {
++	public static void main(String[] args) {
++		SpringApplication.run(App.class, args);
++	}
++
++	@Bean
++	CommandLineRunner initializeDatabase(WriterRepository writerRepository, NovelRepository novelRepository) {
++		return (evt) -> {
++			
++			writerRepository.saveAll(Arrays.asList(new Writer("Victor", "Hugo"), new Writer("Marie-Henri", "Beyle")));
++			/**
++			 * import the sample file
++			 */
++			Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
++					StandardCharsets.UTF_8)
++			      .map(line -> line.split(",")).forEachOrdered(line -> {
++						long authorId = Long.valueOf(line[2].trim()).longValue();
++						if (writerRepository.findById(authorId).isPresent()) {
++							novelRepository.save(new Novel(authorId, line[1]));
++						}
++					});
++
++		};
++	}
++
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/domain/DomainImpl.java b/Tests/videriTest/src/main/java/com/river/videriTest/domain/DomainImpl.java
+new file mode 100644
+index 0000000..6cd603b
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/domain/DomainImpl.java
+@@ -0,0 +1,26 @@
++package com.river.videriTest.domain;
++
++import javax.persistence.GeneratedValue;
++import javax.persistence.Id;
++import javax.persistence.Inheritance;
++import javax.persistence.InheritanceType;
++import javax.persistence.MappedSuperclass;
++
++@MappedSuperclass
++@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
++//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//可以用该注解声明父类，在括号中定义继承策略
++public class DomainImpl {
++
++	@Id
++	@GeneratedValue()
++	private Long id;
++    
++	public Long getId() {
++		return id;
++	}
++	
++	public void setId(Long id) {
++		this.id = id;
++	}	
++		
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/domain/Novel.java b/Tests/videriTest/src/main/java/com/river/videriTest/domain/Novel.java
+new file mode 100644
+index 0000000..01d97a2
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/domain/Novel.java
+@@ -0,0 +1,44 @@
++package com.river.videriTest.domain;
++
++import javax.persistence.Column;
++import javax.persistence.Entity;
++
++@Entity
++public class Novel extends DomainImpl{
++
++
++
++	private Long author;
++	
++	@Column(name = "name", nullable = false)
++	private String name;
++
++	
++
++	public Long getAuthor() {
++		return author;
++	}
++
++	public void setAuthor(Long author) {
++		this.author = author;
++	}
++
++	public String getName() {
++		return name;
++	}
++
++	public void setName(String name) {
++		this.name = name;
++	}
++
++	
++	public Novel(Long author, String name) {
++		this.author = author;
++		this.name = name;
++	}
++
++	public Novel() {
++		
++	}
++
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/domain/Writer.java b/Tests/videriTest/src/main/java/com/river/videriTest/domain/Writer.java
+new file mode 100644
+index 0000000..58320b0
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/domain/Writer.java
+@@ -0,0 +1,45 @@
++package com.river.videriTest.domain;
++
++import javax.persistence.Column;
++import javax.persistence.Entity;
++
++/**
++ * 
++ * @author riverplant
++ *
++ */
++@Entity
++public class Writer extends DomainImpl{
++
++	@Column(name = "first_name", nullable = false)
++	private String firstName;
++
++	@Column(name = "last_name", nullable = false)
++	private String lastName;
++
++	public String getFirstName() {
++		return firstName;
++	}
++
++	public void setFirstName(String firstName) {
++		this.firstName = firstName;
++	}
++
++	public String getLastName() {
++		return lastName;
++	}
++
++	public void setLastName(String lastName) {
++		this.lastName = lastName;
++	}
++
++	public Writer(String firstName, String lastName) {
++		this.firstName = firstName;
++		this.lastName = lastName;
++	}
++
++	Writer() {
++		// JPA only
++	}
++
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/dto/NovelDto.java b/Tests/videriTest/src/main/java/com/river/videriTest/dto/NovelDto.java
+new file mode 100644
+index 0000000..825b8d3
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/dto/NovelDto.java
+@@ -0,0 +1,48 @@
++package com.river.videriTest.dto;
++
++public class NovelDto {
++
++	private Long id;
++	
++	private String name;
++
++	public Long getId() {
++		return id;
++	}
++
++	public void setId(Long id) {
++		this.id = id;
++	}
++
++	public String getName() {
++		return name;
++	}
++
++	public void setName(String name) {
++		this.name = name;
++	}
++	
++	private Long author;
++	
++
++	public Long getAuthor() {
++		return author;
++	}
++
++	public void setAuthor(Long author) {
++		this.author = author;
++	}
++
++	public NovelDto(Long id, String name, Long author) {
++		this.id = id;
++		this.name = name;
++		this.author = author;
++	}
++
++	public NovelDto() {
++	
++	}
++
++	
++	
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/dto/Person.java b/Tests/videriTest/src/main/java/com/river/videriTest/dto/Person.java
+new file mode 100644
+index 0000000..b97833b
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/dto/Person.java
+@@ -0,0 +1,30 @@
++package com.river.videriTest.dto;
++
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.Map;
++
++public final class Person {
++
++     private final String name;
++     private final int age;
++     private final Map<String,Integer> friends;
++
++     public Person(String name, int age, Map<String,Integer> friends) {
++         this.name = name;
++         this.age = age;
++         this.friends = new HashMap(friends);
++     }
++
++     public String getName() { 
++         return this.name;
++     }
++
++     public int getAge() {
++         return this.age;
++     }
++
++     public Map<String,Integer> getFriends() {
++         return Collections.unmodifiableMap(this.friends);
++     }
++}
+\ No newline at end of file
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/dto/WriterDto.java b/Tests/videriTest/src/main/java/com/river/videriTest/dto/WriterDto.java
+new file mode 100644
+index 0000000..f135e9c
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/dto/WriterDto.java
+@@ -0,0 +1,50 @@
++package com.river.videriTest.dto;
++
++import java.util.List;
++
++import com.river.videriTest.domain.Novel;
++
++public class WriterDto {
++	
++	private String firstName;
++	
++	private String lastName;
++	
++	private Long id;
++	
++	public List<Novel> novels;
++
++	public String getFirstName() {
++		return firstName;
++	}
++
++	public void setFirstName(String firstName) {
++		this.firstName = firstName;
++	}
++
++	public String getLastName() {
++		return lastName;
++	}
++
++	public void setLastName(String lastName) {
++		this.lastName = lastName;
++	}
++
++	public Long getId() {
++		return id;
++	}
++
++	public void setId(Long id) {
++		this.id = id;
++	}
++
++	public List<Novel> getNovels() {
++		return novels;
++	}
++
++	public void setNovels(List<Novel> novels) {
++		this.novels = novels;
++	}
++	
++	
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/repository/NovelRepository.java b/Tests/videriTest/src/main/java/com/river/videriTest/repository/NovelRepository.java
+new file mode 100644
+index 0000000..07ddce5
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/repository/NovelRepository.java
+@@ -0,0 +1,13 @@
++package com.river.videriTest.repository;
++
++import java.util.Optional;
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
++
++import com.river.videriTest.domain.Novel;
++
++@Repository
++public interface NovelRepository extends JpaRepository<Novel, Long> {
++
++	Optional<Novel> findById(Long id);
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/repository/WriterRepository.java b/Tests/videriTest/src/main/java/com/river/videriTest/repository/WriterRepository.java
+new file mode 100644
+index 0000000..0c40693
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/repository/WriterRepository.java
+@@ -0,0 +1,13 @@
++package com.river.videriTest.repository;
++
++import java.util.Optional;
++
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
++import com.river.videriTest.domain.Writer;
++
++@Repository
++public interface WriterRepository extends JpaRepository<Writer, Long> {
++	
++	Optional<Writer> findById(Long id);
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/support/RiverNamingStrategy.java b/Tests/videriTest/src/main/java/com/river/videriTest/support/RiverNamingStrategy.java
+new file mode 100644
+index 0000000..d3ddc8c
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/support/RiverNamingStrategy.java
+@@ -0,0 +1,16 @@
++package com.river.videriTest.support;
++
++import org.hibernate.boot.model.naming.Identifier;
++import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
++import org.hibernate.boot.spi.MetadataBuildingContext;
++
++public class RiverNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl {
++
++	private static final long serialVersionUID = -5780318166029693694L;
++
++	@Override
++	protected Identifier toIdentifier(String stringForm, MetadataBuildingContext buildingContext) {
++		// TODO Auto-generated method stub
++		return super.toIdentifier("videri_" + stringForm, buildingContext);
++	}
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/utils/FileUtil.java b/Tests/videriTest/src/main/java/com/river/videriTest/utils/FileUtil.java
+new file mode 100644
+index 0000000..9fc4b1f
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/utils/FileUtil.java
+@@ -0,0 +1,105 @@
++package com.river.videriTest.utils;
++
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.RandomAccessFile;
++import java.net.URISyntaxException;
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.Arrays;
++import java.util.List;
++import java.util.stream.Collectors;
++import com.river.videriTest.dto.NovelDto;
++
++/**
++ * 
++ * @author riverplant
++ *
++ */
++public class FileUtil {
++
++	/**
++	 * @param args
++	 * @throws Exception
++	 */
++	public static void main(String[] args) throws Exception {
++		show();
++	}
++
++	/**
++	 * list the novel records
++	 * @throws IOException
++	 * @throws URISyntaxException
++	 */
++	public static void show() throws IOException, URISyntaxException  {
++		Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
++				StandardCharsets.UTF_8)
++		      .forEach(System.out::println);
++	}
++	/**
++	 * 
++	 * @param novel_name
++	 * @throws IOException
++	 * @throws URISyntaxException
++	 */
++	public static void delete(String novel_name) throws IOException, URISyntaxException {
++		        Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
++				StandardCharsets.UTF_8)
++		         .filter(i->{
++		    	  String[] str = i.split(",");
++		    	  return !str[1].trim().equalsIgnoreCase(novel_name);
++		    	  }).forEach(System.out::println);
++		
++		
++	}
++	
++	
++	public static void update(NovelDto novelDto) throws IOException, URISyntaxException {
++		StringBuffer sb = new StringBuffer();
++		List<List<String>> file_content =  Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
++				StandardCharsets.UTF_8)
++		         .map(i -> {
++		 			String[] str = i.split(",");
++					List<String> list = Arrays.stream(str).collect(Collectors.toList());
++					if(Long.parseLong(str[0])==novelDto.getId()) {
++						list.add(1,novelDto.getName());
++						list.add(2,String.valueOf(novelDto.getAuthor()));
++						list.remove(4);
++						list.remove(3);
++					}
++					return list;
++				}).collect(Collectors.toList());
++		
++		file_content.stream().forEach(row -> {
++			row.stream().forEach(col -> {
++				sb.append(col+",");
++			});
++			sb.deleteCharAt(sb.length()-1);
++			sb.append("\n");
++		});
++		
++		System.out.println(sb.toString());
++
++	}
++
++	public void fileAppender(String fileName, String content) throws IOException {
++
++		BufferedReader reader = new BufferedReader(new FileReader(fileName));
++		String line = null;
++		// 一行一行的读
++		StringBuilder sb = new StringBuilder();
++		sb.append(content);
++		while ((line = reader.readLine()) != null) {
++			sb.append(line);
++			sb.append("\r\n");
++		}
++		reader.close();
++
++		// 写回去
++		RandomAccessFile mm = new RandomAccessFile(fileName, "rw");
++		mm.writeBytes(sb.toString());
++		mm.close();
++	}
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/NovelController.java b/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/NovelController.java
+new file mode 100644
+index 0000000..294783f
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/NovelController.java
+@@ -0,0 +1,75 @@
++package com.river.videriTest.web.controller;
++
++import java.sql.SQLException;
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.List;
++
++import org.springframework.beans.BeanUtils;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.web.bind.annotation.CrossOrigin;
++import org.springframework.web.bind.annotation.DeleteMapping;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.PutMapping;
++import org.springframework.web.bind.annotation.RequestBody;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++import com.river.videriTest.domain.Novel;
++import com.river.videriTest.dto.NovelDto;
++import com.river.videriTest.repository.NovelRepository;
++
++@RestController
++@RequestMapping("/novel")
++public class NovelController {
++
++	@Autowired
++	private NovelRepository novelRepository;
++
++	@GetMapping
++	@CrossOrigin(origins = "http://localhost:8088")
++	public Collection<NovelDto> query() throws SQLException {
++		List<NovelDto> novelDtos = new ArrayList<>();
++		List<Novel> novels = novelRepository.findAll();
++		novels.stream().forEach(item -> novelDtos.add(new NovelDto(item.getId(), item.getName(), item.getAuthor())));
++		return novelDtos;
++	}
++
++	@PostMapping
++	@CrossOrigin(origins = "http://localhost:8088")
++	public NovelDto save(@RequestBody NovelDto novelDto) {
++		Novel novel = new Novel();
++		BeanUtils.copyProperties(novelDto, novel);
++		novelRepository.save(novel);
++		novelDto.setId(novel.getId());
++		return novelDto;
++	}
++
++	@GetMapping("/{id:\\d+}")
++	@CrossOrigin(origins = "http://localhost:8088")
++	public NovelDto getInfo(@PathVariable Long id) throws Exception {
++		Novel novel = novelRepository.findById(id).get();
++		NovelDto novelDto = new NovelDto();
++		BeanUtils.copyProperties(novel, novelDto);
++		return novelDto;
++
++	}
++
++	@PutMapping("/{id:\\d+}")
++	@CrossOrigin(origins = "http://localhost:8080")
++	public NovelDto update(@RequestBody NovelDto novelDto) {
++
++		Novel novel = new Novel();
++		BeanUtils.copyProperties(novelDto, novel);
++		novelRepository.save(novel);
++		return novelDto;
++	}
++
++	@DeleteMapping("{/id:\\d+}")
++	@CrossOrigin(origins = "http://localhost:8080")
++	public void delete(@PathVariable Long id) {
++		novelRepository.deleteById(id);
++	}
++
++}
+diff --git a/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/WriterController.java b/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/WriterController.java
+new file mode 100644
+index 0000000..ef37091
+--- /dev/null
++++ b/Tests/videriTest/src/main/java/com/river/videriTest/web/controller/WriterController.java
+@@ -0,0 +1,27 @@
++package com.river.videriTest.web.controller;
++
++import java.sql.SQLException;
++import java.util.Collection;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.web.bind.annotation.CrossOrigin;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++import com.river.videriTest.domain.Writer;
++import com.river.videriTest.repository.WriterRepository;
++
++@RestController
++@RequestMapping("/writer")
++public class WriterController {
++
++	@Autowired
++    private WriterRepository writerRepository;
++	
++	@GetMapping
++    @CrossOrigin(origins = "http://localhost:8088")
++    public Collection<Writer> listEmployees() throws SQLException {
++        return writerRepository.findAll();
++    }
++}
+diff --git a/Tests/videriTest/src/main/resources/application.properties b/Tests/videriTest/src/main/resources/application.properties
+new file mode 100644
+index 0000000..a0f4222
+--- /dev/null
++++ b/Tests/videriTest/src/main/resources/application.properties
+@@ -0,0 +1,13 @@
++spring.datasource.driver-class-name = com.mysql.jdbc.Driver
++spring.datasource.url = jdbc:mysql://127.0.0.1:3306/videriTest?useUnicode=yes&characterEncoding=UTF-8
++spring.datasource.username = root
++spring.datasource.password = 123456
++server.port = 8088
++
++#JPA------------------------------------------------------------------
++spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
++spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
++spring.jpa.show-sql = true
++spring.jpa.properties.hibernate.format_sql = true
++spring.jpa.hibernate.ddl-auto=create
++spring.jpa.hibernate.naming.implicit-strategy=com.river.videriTest.support.RiverNamingStrategy
+\ No newline at end of file
+diff --git a/Tests/videriTest/src/main/resources/sample.txt b/Tests/videriTest/src/main/resources/sample.txt
+new file mode 100644
+index 0000000..a81b86d
+--- /dev/null
++++ b/Tests/videriTest/src/main/resources/sample.txt
+@@ -0,0 +1,3 @@
++1, Les Misérables, 1
++2, Notre-Dame de Paris,1
++3,Le Rouge et le Noir,2
+\ No newline at end of file
+diff --git a/Tests/videriTest/src/test/java/com/river/videriTest/Util/FileWriterTest.java b/Tests/videriTest/src/test/java/com/river/videriTest/Util/FileWriterTest.java
+new file mode 100644
+index 0000000..910f085
+--- /dev/null
++++ b/Tests/videriTest/src/test/java/com/river/videriTest/Util/FileWriterTest.java
+@@ -0,0 +1,21 @@
++package com.river.videriTest.Util;
++
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertTrue;
++import java.io.File;
++import org.apache.commons.io.FileUtils;
++import org.junit.Test;
++
++public class FileWriterTest {
++	
++	@Test
++	public void fileTest() throws Exception {
++		File input = new File(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI());
++		assertTrue(input.exists());
++		String[] result = FileUtils.readFileToString(input).split("\n");
++		assertEquals(3, result.length);
++		assertEquals(3, result[0].split(",").length);
++		assertEquals("Notre-Dame de Paris", result[1].split(",")[1].trim());
++	}
++
++}
+\ No newline at end of file
+diff --git a/Tests/videriTest/src/test/java/com/river/videriTest/repository/BaseTest.java b/Tests/videriTest/src/test/java/com/river/videriTest/repository/BaseTest.java
+new file mode 100644
+index 0000000..a84848f
+--- /dev/null
++++ b/Tests/videriTest/src/test/java/com/river/videriTest/repository/BaseTest.java
+@@ -0,0 +1,21 @@
++package com.river.videriTest.repository;
++
++import javax.transaction.Transactional;
++
++import org.junit.runner.RunWith;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.test.context.junit4.SpringRunner;
++
++import com.river.videriTest.App;
++/**
++ * 
++ * @author riverplant
++ *
++ */
++@RunWith(SpringRunner.class)
++@SpringBootTest(classes=App.class)
++@Transactional//会执行回滚
++public class BaseTest 
++{ 
++	
++}
+diff --git a/Tests/videriTest/src/test/java/com/river/videriTest/repository/NovelTest.java b/Tests/videriTest/src/test/java/com/river/videriTest/repository/NovelTest.java
+new file mode 100644
+index 0000000..3ffe85e
+--- /dev/null
++++ b/Tests/videriTest/src/test/java/com/river/videriTest/repository/NovelTest.java
+@@ -0,0 +1,74 @@
++package com.river.videriTest.repository;
++
++import java.util.List;
++
++import org.junit.Assert;
++import org.junit.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.data.domain.Example;
++import org.springframework.data.domain.ExampleMatcher;
++import org.springframework.data.domain.ExampleMatcher.StringMatcher;
++import org.springframework.data.domain.Page;
++import org.springframework.data.domain.PageRequest;
++import org.springframework.data.domain.Pageable;
++import org.springframework.data.domain.Sort.Direction;
++
++import com.river.videriTest.domain.Novel;
++
++
++public class NovelTest extends BaseTest{
++
++	@Autowired
++	private NovelRepository novelRepository;
++
++	
++	@Test
++	public void test1() {
++     List<Novel> novels = novelRepository.findAll();
++     novels.stream().forEach(System.out::println);
++	}
++	
++	@Test//like
++	public void test3() {
++		Pageable pageable = PageRequest.of(0, 10,Direction.DESC, "id");
++		Novel novel = new Novel();
++		novel.setName("Le%");
++		//相当于like
++		ExampleMatcher matcher =ExampleMatcher.matching()
++				                              .withStringMatcher(StringMatcher.CONTAINING);
++		Example<Novel> example = Example.of(novel,matcher);
++		Page<Novel> depts = novelRepository.findAll(example,pageable);
++		Assert.assertEquals(2, depts.getContent().size());
++	}
++	
++	
++	
++	@Test
++	public void whenCreateSuccess() {		
++		Long count = novelRepository.count();
++		Novel novel = new Novel();
++		novel.setName("Demain dès l'aube");
++		novel.setAuthor(1L);
++		novelRepository.save(novel);
++		Assert.assertEquals(count+1, novelRepository.count());
++	}
++	
++	@Test
++	public void whenDeletSuccess() {
++		Long count = novelRepository.count();
++		novelRepository.deleteById(3L);
++		Assert.assertEquals(count-1, novelRepository.count());	
++	}
++	
++	@Test
++	public void whenUpdateSuccess() {
++		
++		Novel novel = new Novel();
++		novel.setName("La Fin de Satan");
++		novel.setId(4L);		
++		novelRepository.save(novel);
++		Novel det = novelRepository.findById(4L).get();
++		Assert.assertEquals("La Fin de Satan",det.getName().trim());
++		
++	}
++}
+diff --git a/Tests/videriTest/src/test/java/com/river/videriTest/web/controller/NovelControllerTest.java b/Tests/videriTest/src/test/java/com/river/videriTest/web/controller/NovelControllerTest.java
+new file mode 100644
+index 0000000..a137af5
+--- /dev/null
++++ b/Tests/videriTest/src/test/java/com/river/videriTest/web/controller/NovelControllerTest.java
+@@ -0,0 +1,80 @@
++package com.river.videriTest.web.controller;
++
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.http.MediaType;
++import org.springframework.test.context.junit4.SpringRunner;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
++import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.context.WebApplicationContext;
++
++import com.river.videriTest.App;
++
++/**
++ * 
++ * @author riverplant
++ *
++ */
++@RunWith(SpringRunner.class)
++@SpringBootTest(classes=App.class)
++public class NovelControllerTest {
++
++	@Autowired
++	private WebApplicationContext wac;
++	
++	private MockMvc mockMvc;
++		
++	@Before
++	public void setup() {
++		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
++	}
++	
++	@Test
++	public void whenQuerySuccess() throws Exception {
++		String result = mockMvc.perform(MockMvcRequestBuilders.get("/novel")
++				.accept(MediaType.APPLICATION_JSON_UTF8))
++	           .andExpect(MockMvcResultMatchers.status().isOk())
++	           .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(3))
++	           .andReturn().getResponse().getContentAsString();
++		System.out.println(result);
++	}
++	@Test
++	public void whenGetInfoSuccess() throws Exception {
++		String result = mockMvc.perform(MockMvcRequestBuilders.get("/novel/4")
++			.accept(MediaType.APPLICATION_JSON_UTF8))
++			.andExpect(MockMvcResultMatchers.status().isOk())
++			.andExpect(MockMvcResultMatchers.jsonPath("$.name").value(" Notre-Dame de Paris"))
++			.andReturn().getResponse().getContentAsString();
++		System.out.println(result);
++			
++	}
++	@Test
++	public void whenCreateSuccess() throws Exception {
++		String content = "{\"id\":null,\"name\":\"Toute la Lyre\", \"author\":\"1\"}";
++		String result = mockMvc.perform(MockMvcRequestBuilders.post("/novel").content(content).contentType(MediaType.APPLICATION_JSON))
++			.andExpect(MockMvcResultMatchers.status().isOk())
++			.andExpect(MockMvcResultMatchers.jsonPath("$.id").value("6"))
++			.andReturn().getResponse().getContentAsString();
++		System.out.println(result);
++	}
++	
++	@Test
++	public void whenUpdateSuccess() throws Exception {
++		String content = "{\"id\":5,\"name\":\"Toute la Lyre222\", \"author\":\"1\"}";
++		mockMvc.perform(MockMvcRequestBuilders.put("/novel/5").content(content).contentType(MediaType.APPLICATION_JSON))
++			.andExpect(MockMvcResultMatchers.status().isOk())
++			.andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Toute la Lyre222"));
++	}
++	
++	@Test
++	public void whenDeleteSuccess() throws Exception {
++		mockMvc.perform(MockMvcRequestBuilders.delete("/book/4").contentType(MediaType.APPLICATION_JSON))
++			.andExpect(MockMvcResultMatchers.status().isOk());
++	}
++	
++}
+diff --git a/Tests/videriTest/target/classes/META-INF/MANIFEST.MF b/Tests/videriTest/target/classes/META-INF/MANIFEST.MF
+new file mode 100644
+index 0000000..57aed63
+--- /dev/null
++++ b/Tests/videriTest/target/classes/META-INF/MANIFEST.MF
+@@ -0,0 +1,9 @@
++Manifest-Version: 1.0
++Implementation-Title: videriTest
++Implementation-Version: 0.0.1-SNAPSHOT
++Built-By: riverplant
++Implementation-Vendor-Id: com.river
++Build-Jdk: 1.8.0_181
++Implementation-URL: http://maven.apache.org
++Created-By: Maven Integration for Eclipse
++
+diff --git a/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.properties b/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.properties
+new file mode 100644
+index 0000000..2a0039a
+--- /dev/null
++++ b/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.properties
+@@ -0,0 +1,7 @@
++#Generated by Maven Integration for Eclipse
++#Mon Sep 02 19:08:31 EDT 2019
++version=0.0.1-SNAPSHOT
++groupId=com.river
++m2e.projectName=videriTest
++m2e.projectLocation=J\:\\repository\\Tests\\videriTest
++artifactId=videriTest
+diff --git a/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.xml b/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.xml
+new file mode 100644
+index 0000000..07a8533
+--- /dev/null
++++ b/Tests/videriTest/target/classes/META-INF/maven/com.river/videriTest/pom.xml
+@@ -0,0 +1,106 @@
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++	<modelVersion>4.0.0</modelVersion>
++
++	<groupId>com.river</groupId>
++	<artifactId>videriTest</artifactId>
++	<version>0.0.1-SNAPSHOT</version>
++	<packaging>jar</packaging>
++
++	<name>videriTest</name>
++	<url>http://maven.apache.org</url>
++	<parent>
++		<groupId>org.springframework.boot</groupId>
++		<artifactId>spring-boot-starter-parent</artifactId>
++		<version>2.1.2.RELEASE</version>
++		<relativePath /> <!-- lookup parent from repository -->
++	</parent>
++	<properties>
++		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++		<maven.compiler.source>1.8</maven.compiler.source>
++		<maven.compiler.target>1.8</maven.compiler.target>
++		<java.version>1.8</java.version>
++	</properties>
++
++	<dependencies>
++	<!-- springboot web -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-web</artifactId>
++		</dependency>
++
++		<!-- springboot test -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-test</artifactId>
++		</dependency>
++		<!-- String 转Json -->
++		<dependency>
++			<groupId>com.google.code.gson</groupId>
++			<artifactId>gson</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-jdbc</artifactId>
++		</dependency>
++		<!-- aop -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-aop</artifactId>
++		</dependency>
++		<!-- JPA -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-data-jpa</artifactId>
++		</dependency>
++		<!-- cache -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-cache</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>mysql</groupId>
++			<artifactId>mysql-connector-java</artifactId>
++			<version>5.1.8</version>
++		</dependency>
++		 <!-- Utils -->
++        <dependency>
++            <groupId>org.apache.commons</groupId>
++            <artifactId>commons-io</artifactId>
++            <version>1.3.2</version>
++        </dependency>
++		<dependency>
++			<groupId>junit</groupId>
++			<artifactId>junit</artifactId>
++			<scope>test</scope>
++		</dependency>
++		<!-- swagger -->
++		<dependency>
++			<groupId>io.springfox</groupId>
++			<artifactId>springfox-swagger2</artifactId>
++			<version>2.9.2</version>
++		</dependency>
++		<dependency>
++			<groupId>io.springfox</groupId>
++			<artifactId>springfox-swagger-ui</artifactId>
++			<version>2.9.2</version>
++		</dependency>
++	</dependencies>
++	<build>
++		<plugins>
++			<plugin>
++				<groupId>org.springframework.boot</groupId>
++				<artifactId>spring-boot-maven-plugin</artifactId>
++				<executions>
++					<execution>
++						<goals>
++							<goal>repackage</goal>
++						</goals>
++					</execution>
++				</executions>
++			</plugin>
++		</plugins>
++		<finalName>videriTest</finalName>
++	</build>
++</project>
+diff --git a/Tests/videriTest/target/classes/application.properties b/Tests/videriTest/target/classes/application.properties
+new file mode 100644
+index 0000000..a0f4222
+--- /dev/null
++++ b/Tests/videriTest/target/classes/application.properties
+@@ -0,0 +1,13 @@
++spring.datasource.driver-class-name = com.mysql.jdbc.Driver
++spring.datasource.url = jdbc:mysql://127.0.0.1:3306/videriTest?useUnicode=yes&characterEncoding=UTF-8
++spring.datasource.username = root
++spring.datasource.password = 123456
++server.port = 8088
++
++#JPA------------------------------------------------------------------
++spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
++spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
++spring.jpa.show-sql = true
++spring.jpa.properties.hibernate.format_sql = true
++spring.jpa.hibernate.ddl-auto=create
++spring.jpa.hibernate.naming.implicit-strategy=com.river.videriTest.support.RiverNamingStrategy
+\ No newline at end of file
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/App.class b/Tests/videriTest/target/classes/com/river/videriTest/App.class
+new file mode 100644
+index 0000000..1e417f0
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/App.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/domain/DomainImpl.class b/Tests/videriTest/target/classes/com/river/videriTest/domain/DomainImpl.class
+new file mode 100644
+index 0000000..9ff01db
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/domain/DomainImpl.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/domain/Novel.class b/Tests/videriTest/target/classes/com/river/videriTest/domain/Novel.class
+new file mode 100644
+index 0000000..47a3616
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/domain/Novel.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/domain/Writer.class b/Tests/videriTest/target/classes/com/river/videriTest/domain/Writer.class
+new file mode 100644
+index 0000000..4022141
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/domain/Writer.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/dto/NovelDto.class b/Tests/videriTest/target/classes/com/river/videriTest/dto/NovelDto.class
+new file mode 100644
+index 0000000..4377d83
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/dto/NovelDto.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/dto/Person.class b/Tests/videriTest/target/classes/com/river/videriTest/dto/Person.class
+new file mode 100644
+index 0000000..a9002a6
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/dto/Person.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/dto/WriterDto.class b/Tests/videriTest/target/classes/com/river/videriTest/dto/WriterDto.class
+new file mode 100644
+index 0000000..ff1c6a1
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/dto/WriterDto.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/repository/NovelRepository.class b/Tests/videriTest/target/classes/com/river/videriTest/repository/NovelRepository.class
+new file mode 100644
+index 0000000..688f0a7
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/repository/NovelRepository.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/repository/WriterRepository.class b/Tests/videriTest/target/classes/com/river/videriTest/repository/WriterRepository.class
+new file mode 100644
+index 0000000..19e4415
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/repository/WriterRepository.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/support/RiverNamingStrategy.class b/Tests/videriTest/target/classes/com/river/videriTest/support/RiverNamingStrategy.class
+new file mode 100644
+index 0000000..a88d5ba
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/support/RiverNamingStrategy.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/utils/FileUtil.class b/Tests/videriTest/target/classes/com/river/videriTest/utils/FileUtil.class
+new file mode 100644
+index 0000000..6793865
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/utils/FileUtil.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/web/controller/NovelController.class b/Tests/videriTest/target/classes/com/river/videriTest/web/controller/NovelController.class
+new file mode 100644
+index 0000000..a4c0e32
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/web/controller/NovelController.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/com/river/videriTest/web/controller/WriterController.class b/Tests/videriTest/target/classes/com/river/videriTest/web/controller/WriterController.class
+new file mode 100644
+index 0000000..a85b605
+--- /dev/null
++++ b/Tests/videriTest/target/classes/com/river/videriTest/web/controller/WriterController.class
+Binary files differ
+diff --git a/Tests/videriTest/target/classes/sample.txt b/Tests/videriTest/target/classes/sample.txt
+new file mode 100644
+index 0000000..a81b86d
+--- /dev/null
++++ b/Tests/videriTest/target/classes/sample.txt
+@@ -0,0 +1,3 @@
++1, Les Misérables, 1
++2, Notre-Dame de Paris,1
++3,Le Rouge et le Noir,2
+\ No newline at end of file
+diff --git a/Tests/videriTest/target/test-classes/com/river/videriTest/Util/FileWriterTest.class b/Tests/videriTest/target/test-classes/com/river/videriTest/Util/FileWriterTest.class
+new file mode 100644
+index 0000000..e974b8d
+--- /dev/null
++++ b/Tests/videriTest/target/test-classes/com/river/videriTest/Util/FileWriterTest.class
+Binary files differ
+diff --git a/Tests/videriTest/target/test-classes/com/river/videriTest/repository/BaseTest.class b/Tests/videriTest/target/test-classes/com/river/videriTest/repository/BaseTest.class
+new file mode 100644
+index 0000000..fdbaaf0
+--- /dev/null
++++ b/Tests/videriTest/target/test-classes/com/river/videriTest/repository/BaseTest.class
+Binary files differ
+diff --git a/Tests/videriTest/target/test-classes/com/river/videriTest/repository/NovelTest.class b/Tests/videriTest/target/test-classes/com/river/videriTest/repository/NovelTest.class
+new file mode 100644
+index 0000000..9091982
+--- /dev/null
++++ b/Tests/videriTest/target/test-classes/com/river/videriTest/repository/NovelTest.class
+Binary files differ
+diff --git a/Tests/videriTest/target/test-classes/com/river/videriTest/web/controller/NovelControllerTest.class b/Tests/videriTest/target/test-classes/com/river/videriTest/web/controller/NovelControllerTest.class
+new file mode 100644
+index 0000000..0cd7e58
+--- /dev/null
++++ b/Tests/videriTest/target/test-classes/com/river/videriTest/web/controller/NovelControllerTest.class
+Binary files differ
