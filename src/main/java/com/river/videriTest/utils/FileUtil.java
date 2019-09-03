@@ -84,22 +84,4 @@ public class FileUtil {
 
 	}
 
-	public void fileAppender(String fileName, String content) throws IOException {
-
-		BufferedReader reader = new BufferedReader(new FileReader(fileName));
-		String line = null;
-		// 一行一行的读
-		StringBuilder sb = new StringBuilder();
-		sb.append(content);
-		while ((line = reader.readLine()) != null) {
-			sb.append(line);
-			sb.append("\r\n");
-		}
-		reader.close();
-
-		// 写回去
-		RandomAccessFile mm = new RandomAccessFile(fileName, "rw");
-		mm.writeBytes(sb.toString());
-		mm.close();
-	}
 }
