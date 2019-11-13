@@ -24,6 +24,11 @@
 	</properties>
 
 	<dependencies>
+	   <dependency>
+	      <artifactId>api</artifactId>
+	      <groupId>net.premieresloges</groupId>
+	      <version>1.0</version>
+	    </dependency>
 	<!-- springboot web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
