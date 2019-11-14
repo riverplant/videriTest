@@ -4,13 +4,20 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
+/**
+ * 
+ * @author jli
+ *
+ */
 @Entity
 @Table(name="success_kill", 
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"id","name"})},
+    uniqueConstraints = {@UniqueConstraint(columnNames = {"seckillId","userPhone"})},
      indexes = {@Index(name="idx_create_time",columnList = "createTime")})
 public class SuccessKill extends DomainImpl{
 
@@ -20,11 +27,16 @@ public class SuccessKill extends DomainImpl{
     private long userPhone;
     
     @Column(name = "state", nullable = false)
-    private int state;
+    private short state;
     
     @Column(name = "create_time", nullable = false)
     private Date createTime;
-
+    
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seckill_id")
+    private Seckill seckill;
+    
     public long getUserPhone() {
         return userPhone;
     }
@@ -32,12 +44,12 @@ public class SuccessKill extends DomainImpl{
     public void setUserPhone(long userPhone) {
         this.userPhone = userPhone;
     }
-
-    public int getState() {
+  
+    public short getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(short state) {
         this.state = state;
     }
 
@@ -48,16 +60,22 @@ public class SuccessKill extends DomainImpl{
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+   
+    public Seckill getSeckill() {
+        return seckill;
+    }
 
-    public SuccessKill(long userPhone, int state, Date createTime) {
-        super();
-        this.userPhone = userPhone;
-        this.state = state;
-        this.createTime = createTime;
+    public void setSeckill(Seckill seckill) {
+        this.seckill = seckill;
     }
 
     public SuccessKill() {
         super();
+    }
+
+    @Override
+    public String toString() {
+        return "SuccessKill [userPhone=" + userPhone + ", state=" + state + ", createTime=" + createTime + "]";
     }
     
 

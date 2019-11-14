@@ -1,13 +1,21 @@
 package com.river.videriTest.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
+/**
+ * 
+ * @author jli
+ *
+ */
 @Entity
 @Table(name="seckill", 
     uniqueConstraints = {@UniqueConstraint(columnNames = {"id","name"})},
@@ -33,7 +41,9 @@ public class Seckill extends DomainImpl{
     @Column(name = "create_time", nullable = false)
     private Date createTime;
 
-
+    @OneToMany(mappedBy ="seckill",cascade = CascadeType.ALL)
+    private Set<SuccessKill> successKills = new HashSet<>();
+    
     public String getName() {
         return name;
     }
@@ -97,5 +107,13 @@ public class Seckill extends DomainImpl{
     public Seckill() {
         super();
     }
+
+
+    @Override
+    public String toString() {
+        return "Seckill [name=" + name + ", number=" + number + ", startTime=" + startTime + ", endTime=" + endTime + ", createTime=" + createTime + "]";
+    }
+    
+    
     
 }
