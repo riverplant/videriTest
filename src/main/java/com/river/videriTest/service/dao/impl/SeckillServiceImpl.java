@@ -17,14 +17,12 @@ public class SeckillServiceImpl implements SeckillService {
     
     @Override
     public int reduceNumber(long seckillId, Date killTime) {
-        // TODO Auto-generated method stub
-        return 0;
+        return seckillRepository.reduceNumber(seckillId, killTime);
     }
 
     @Override
     public Seckill queryById(long seckillId) {
-        // TODO Auto-generated method stub
-        return null;
+        return seckillRepository.findById(seckillId).orElseThrow();
     }
 
     @Override

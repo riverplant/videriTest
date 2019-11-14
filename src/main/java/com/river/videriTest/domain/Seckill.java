@@ -18,8 +18,8 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name="seckill", 
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"id","name"})},
-     indexes = {@Index(name="idx_start_time",columnList = "startTime"),@Index(name="idx_end_time",columnList = "endTime"),@Index(name="idx_create_time",columnList = "createTime")})
+    uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})},
+     indexes = {@Index(name="idx_start_time",columnList = "start_time"),@Index(name="idx_end_time",columnList = "end_time"),@Index(name="idx_create_time",columnList = "create_time")})
 public class Seckill extends DomainImpl{
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +39,7 @@ public class Seckill extends DomainImpl{
     
 
     @Column(name = "create_time", nullable = false)
-    private Date createTime;
+    private Date createTime = new Date();
 
     @OneToMany(mappedBy ="seckill",cascade = CascadeType.ALL)
     private Set<SuccessKill> successKills = new HashSet<>();
@@ -94,13 +94,12 @@ public class Seckill extends DomainImpl{
     }
 
 
-    public Seckill(String name, int number, Date startTime, Date endTime, Date createTime) {
-        super();
+    public Seckill(String name, int number, Date startTime, Date endTime) {
+      
         this.name = name;
         this.number = number;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.createTime = createTime;
     }
 
 

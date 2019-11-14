@@ -17,8 +17,8 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name="success_kill", 
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"seckillId","userPhone"})},
-     indexes = {@Index(name="idx_create_time",columnList = "createTime")})
+    uniqueConstraints = {@UniqueConstraint(columnNames = {"seckill_id","user_phone"})},
+     indexes = {@Index(name="idx_create_time",columnList = "create_time")})
 public class SuccessKill extends DomainImpl{
 
     private static final long serialVersionUID = 1164382651158317079L;
@@ -76,6 +76,14 @@ public class SuccessKill extends DomainImpl{
     @Override
     public String toString() {
         return "SuccessKill [userPhone=" + userPhone + ", state=" + state + ", createTime=" + createTime + "]";
+    }
+
+    public SuccessKill(long userPhone, short state, Date createTime, Seckill seckill) {
+        super();
+        this.userPhone = userPhone;
+        this.state = state;
+        this.createTime = createTime;
+        this.seckill = seckill;
     }
     
 

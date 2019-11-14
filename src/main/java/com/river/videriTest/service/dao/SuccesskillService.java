@@ -16,7 +16,7 @@ public interface SuccesskillService {
     * @param userPhone
     * @return :插入的行数: 可以判断操作是否成功
     */
-    int insertSuccessKill(long seckillId, long userPhone);
+    SuccessKill insertSuccessKill(long seckillId, long userPhone);
     
     /**
      * 根据Id查询秒杀成功对象

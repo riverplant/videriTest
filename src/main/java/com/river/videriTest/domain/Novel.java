@@ -13,7 +13,8 @@ import javax.persistence.UniqueConstraint;
 public class Novel extends DomainImpl{
 
     private static final long serialVersionUID = 1L;
-
+    
+    @Column(name = "author", nullable = false)
     private Long author;
 	
 	@Column(name = "name", nullable = false)

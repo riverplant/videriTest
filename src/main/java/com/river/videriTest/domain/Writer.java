@@ -12,7 +12,7 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name="writer", 
-uniqueConstraints = {@UniqueConstraint(columnNames = {"firstName","lastName"})})
+uniqueConstraints = {@UniqueConstraint(columnNames = {"first_name","last_name"})})
 public class Writer extends DomainImpl{
 
     private static final long serialVersionUID = 1L;
