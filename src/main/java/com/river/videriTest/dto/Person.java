@@ -13,7 +13,7 @@ public final class Person {
      public Person(String name, int age, Map<String,Integer> friends) {
          this.name = name;
          this.age = age;
-         this.friends = new HashMap(friends);
+         this.friends = new HashMap<String, Integer>(friends);
      }
 
      public String getName() { 

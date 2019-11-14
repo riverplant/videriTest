@@ -2,6 +2,8 @@ package com.river.videriTest.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * 
@@ -9,9 +11,13 @@ import javax.persistence.Entity;
  *
  */
 @Entity
+@Table(name="writer", 
+uniqueConstraints = {@UniqueConstraint(columnNames = {"firstName","lastName"})})
 public class Writer extends DomainImpl{
 
-	@Column(name = "first_name", nullable = false)
+    private static final long serialVersionUID = 1L;
+
+    @Column(name = "first_name", nullable = false)
 	private String firstName;
 
 	@Column(name = "last_name", nullable = false)
