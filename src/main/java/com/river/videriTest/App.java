@@ -26,7 +26,7 @@ public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 	}
-
+/**
 	@Bean
 	CommandLineRunner initializeDatabase(SeckillRepository seckillRepository) throws ParseException {
 	    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -41,20 +41,19 @@ public class App {
 		            new Seckill("300mioashaixiaomi4",300,start_date,end_date),
 		            new Seckill("200mioashahongminote",400,start_date,end_date),
 		            new Seckill("3000mioashaiphone7",10,start_date,end_date)));
-//			writerRepository.saveAll(Arrays.asList(new Writer("Victor", "Hugo"), new Writer("Marie-Henri", "Beyle")));
-//			/**
-//			 * import the sample file
-//			 */
-//			Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
-//					StandardCharsets.UTF_8)
-//			      .map(line -> line.split(",")).forEachOrdered(line -> {
-//						long authorId = Long.valueOf(line[2].trim()).longValue();
-//						if (writerRepository.findById(authorId).isPresent()) {
-//							novelRepository.save(new Novel(authorId, line[1]));
-//						}
-//					});
+			writerRepository.saveAll(Arrays.asList(new Writer("Victor", "Hugo"), new Writer("Marie-Henri", "Beyle")));
+		
+			Files.lines(Paths.get(Thread.currentThread().getContextClassLoader().getResource("./sample.txt").toURI()),
+					StandardCharsets.UTF_8)
+			      .map(line -> line.split(",")).forEachOrdered(line -> {
+						long authorId = Long.valueOf(line[2].trim()).longValue();
+						if (writerRepository.findById(authorId).isPresent()) {
+							novelRepository.save(new Novel(authorId, line[1]));
+						}
+					});
 
 		};
 	}
+	**/
 
 }

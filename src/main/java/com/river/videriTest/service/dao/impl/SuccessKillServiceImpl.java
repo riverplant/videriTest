@@ -23,13 +23,24 @@ public class SuccessKillServiceImpl implements SuccesskillService {
         SuccessKill SuccessKill = new SuccessKill();
         SuccessKill.setSeckill(seckill);
         SuccessKill.setUserPhone(userPhone);
-        return successkillRepository.save(SuccessKill);
+        return successkillRepository.save(SuccessKill) ;
     }
 
     @Override
     public SuccessKill queryByIdWithSeckill(long seckillId) {
         // TODO Auto-generated method stub
         return successkillRepository.findById(seckillId).orElseThrow();
+    }
+
+    @Override
+    public long getCount() {
+        return successkillRepository.count();
+    }
+
+    @Override
+    public int insertIgnore(int state, long user_phone, long seckill_id) {
+        Seckill seckill = seckillRepository.findById(seckill_id).orElseThrow();
+        return successkillRepository.insertIgnore(state, user_phone, seckill_id);
     }
 
 }

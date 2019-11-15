@@ -30,7 +30,7 @@ public class SuccessKill extends DomainImpl{
     private short state;
     
     @Column(name = "create_time", nullable = false)
-    private Date createTime;
+    private Date createTime = new Date();
     
     
     @ManyToOne(fetch = FetchType.LAZY)

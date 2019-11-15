@@ -28,7 +28,7 @@ public class SeckillServiceImpl implements SeckillService {
     @Override
     public List<Seckill> queryAll(int offset, int limit) {
         // TODO Auto-generated method stub
-        return null;
+        return seckillRepository.queryAll(offset, limit);
     }
 
 }
