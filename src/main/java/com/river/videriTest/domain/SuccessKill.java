@@ -79,7 +79,6 @@ public class SuccessKill extends DomainImpl{
     }
 
     public SuccessKill(long userPhone, short state, Date createTime, Seckill seckill) {
-        super();
         this.userPhone = userPhone;
         this.state = state;
         this.createTime = createTime;

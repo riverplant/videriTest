@@ -26,7 +26,7 @@ public interface SuccesskillService {
      * @param seckillId
      * @return
      */
-    SuccessKill queryByIdWithSeckill(long seckillId);
+    SuccessKill queryByIdWithSeckillWithNull(long seckillId,long userPhone );
 
 
     long getCount();

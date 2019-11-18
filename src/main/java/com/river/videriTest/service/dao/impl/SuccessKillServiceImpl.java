@@ -27,9 +27,9 @@ public class SuccessKillServiceImpl implements SuccesskillService {
     }
 
     @Override
-    public SuccessKill queryByIdWithSeckill(long seckillId) {
-        // TODO Auto-generated method stub
-        return successkillRepository.findById(seckillId).orElseThrow();
+    public SuccessKill queryByIdWithSeckillWithNull(long seckillId,long userPhone) {  
+        SuccessKill successKill = successkillRepository.queryByIdWithSeckill(seckillId, userPhone);
+        return successKill != null ? successKill : null;
     }
 
     @Override
@@ -39,7 +39,6 @@ public class SuccessKillServiceImpl implements SuccesskillService {
 
     @Override
     public int insertIgnore(int state, long user_phone, long seckill_id) {
-        Seckill seckill = seckillRepository.findById(seckill_id).orElseThrow();
         return successkillRepository.insertIgnore(state, user_phone, seckill_id);
     }
 
