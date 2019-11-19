@@ -48,8 +48,11 @@ public class SeckillServiceImpl implements SeckillService {
 
     @Override
     public List<Seckill> queryAll(int offset, int limit) {
-        // TODO Auto-generated method stub
-        return seckillRepository.queryAll(offset, limit);
+        if(offset < 0 && limit < 0) {
+            return  seckillRepository.findAll();
+        }else {
+            return seckillRepository.queryAll(offset, limit); 
+        }
     }
 
     @Override
@@ -109,7 +112,7 @@ public class SeckillServiceImpl implements SeckillService {
                 // 记录购买行为
                 int insertCount = successkillRepository.insertIgnore(SeckillStatEnum.SUCCESS.getState(), userPhone, seckillId);
                 if (insertCount <= 0) {
-                    TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+                    //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                     // 重复秒杀
                     throw new RepeatKillException("seckill repeated...");
                 } else {

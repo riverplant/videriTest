@@ -1,7 +1,5 @@
 package com.river.videriTest.repository;
 
-import java.text.ParseException;
-
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.river.videriTest.repository.SuccessKillTest" time="0.109" tests="2" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/jli/git/videriTest/target/test-classes:/home/jli/git/videriTest/target/classes:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.1.2.RELEASE/spring-boot-starter-web-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.2.RELEASE/spring-boot-starter-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot/2.1.2.RELEASE/spring-boot-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.1.2.RELEASE/spring-boot-starter-logging-2.1.2.RELEASE.jar:/home/jli/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/jli/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/jli/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.1/log4j-to-slf4j-2.11.1.jar:/home/jli/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar:/home/jli/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/home/jli/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/jli/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.1.2.RELEASE/spring-boot-starter-json-2.1.2.RELEASE.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.9.8/jackson-module-parameter-names-2.9.8.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.1.2.RELEASE/spring-boot-starter-tomcat-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.14/tomcat-embed-websocket-9.0.14.jar:/home/jli/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.14.Final/hibernate-validator-6.0.14.Final.jar:/home/jli/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/jli/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/home/jli/.m2/repository/org/springframework/spring-web/5.1.4.RELEASE/spring-web-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-beans/5.1.4.RELEASE/spring-beans-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-webmvc/5.1.4.RELEASE/spring-webmvc-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-context/5.1.4.RELEASE/spring-context-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-expression/5.1.4.RELEASE/spring-expression-5.1.4.RELEASE.jar:/home/jli/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.14/tomcat-embed-jasper-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.14/tomcat-embed-core-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/tomcat-annotations-api/9.0.14/tomcat-annotations-api-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.14/tomcat-embed-el-9.0.14.jar:/home/jli/.m2/repository/org/eclipse/jdt/ecj/3.15.0/ecj-3.15.0.jar:/home/jli/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.1.2.RELEASE/spring-boot-starter-test-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-test/2.1.2.RELEASE/spring-boot-test-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.1.2.RELEASE/spring-boot-test-autoconfigure-2.1.2.RELEASE.jar:/home/jli/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/home/jli/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/home/jli/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/home/jli/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/home/jli/.m2/repository/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar:/home/jli/.m2/repository/org/mockito/mockito-core/2.23.4/mockito-core-2.23.4.jar:/home/jli/.m2/repository/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar:/home/jli/.m2/repository/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar:/home/jli/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/home/jli/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/jli/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/jli/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/home/jli/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/jli/.m2/repository/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-jcl/5.1.4.RELEASE/spring-jcl-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-test/5.1.4.RELEASE/spring-test-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/xmlunit/xmlunit-core/2.6.2/xmlunit-core-2.6.2.jar:/home/jli/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.1.2.RELEASE/spring-boot-starter-jdbc-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-jdbc/5.1.4.RELEASE/spring-jdbc-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.1.2.RELEASE/spring-boot-starter-aop-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-aop/5.1.4.RELEASE/spring-aop-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/2.1.2.RELEASE/spring-boot-starter-data-jpa-2.1.2.RELEASE.jar:/home/jli/.m2/repository/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3.jar:/home/jli/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jli/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jli/.m2/repository/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar:/home/jli/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/jli/.m2/repository/org/javassist/javassist/3.23.1-GA/javassist-3.23.1-GA.jar:/home/jli/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/jli/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/home/jli/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/home/jli/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.4.Final/hibernate-commons-annotations-5.0.4.Final.jar:/home/jli/.m2/repository/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-orm/5.1.4.RELEASE/spring-orm-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-aspects/5.1.4.RELEASE/spring-aspects-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-cache/2.1.2.RELEASE/spring-boot-starter-cache-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-context-support/5.1.4.RELEASE/spring-context-support-5.1.4.RELEASE.jar:/home/jli/.m2/repository/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar:/home/jli/.m2/repository/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0.jar:/home/jli/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/jli/.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar:/home/jli/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2.jar:/home/jli/.m2/repository/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar:/home/jli/.m2/repository/io/swagger/swagger-models/1.5.20/swagger-models-1.5.20.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/home/jli/.m2/repository/io/springfox/springfox-spi/2.9.2/springfox-spi-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-core/2.9.2/springfox-core-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-schema/2.9.2/springfox-schema-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger-common/2.9.2/springfox-swagger-common-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-spring-web/2.9.2/springfox-spring-web-2.9.2.jar:/home/jli/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/jli/.m2/repository/com/fasterxml/classmate/1.4.0/classmate-1.4.0.jar:/home/jli/.m2/repository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar:/home/jli/.m2/repository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar:/home/jli/.m2/repository/org/mapstruct/mapstruct/1.2.0.Final/mapstruct-1.2.0.Final.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger-ui/2.9.2/springfox-swagger-ui-2.9.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-oracle/lib"/>
+    <property name="sun.java.command" value="/home/jli/git/videriTest/target/surefire/surefirebooter17187843857839078646.jar /home/jli/git/videriTest/target/surefire 2019-11-19T14-52-38_559-jvmRun1 surefire14451494019121339111tmp surefire_05714981196186313926tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/jli/git/videriTest/target/test-classes:/home/jli/git/videriTest/target/classes:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.1.2.RELEASE/spring-boot-starter-web-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.2.RELEASE/spring-boot-starter-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot/2.1.2.RELEASE/spring-boot-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.1.2.RELEASE/spring-boot-starter-logging-2.1.2.RELEASE.jar:/home/jli/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/jli/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/jli/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.1/log4j-to-slf4j-2.11.1.jar:/home/jli/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar:/home/jli/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/home/jli/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/jli/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.1.2.RELEASE/spring-boot-starter-json-2.1.2.RELEASE.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8.jar:/home/jli/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.9.8/jackson-module-parameter-names-2.9.8.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.1.2.RELEASE/spring-boot-starter-tomcat-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.14/tomcat-embed-websocket-9.0.14.jar:/home/jli/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.14.Final/hibernate-validator-6.0.14.Final.jar:/home/jli/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/jli/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/home/jli/.m2/repository/org/springframework/spring-web/5.1.4.RELEASE/spring-web-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-beans/5.1.4.RELEASE/spring-beans-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-webmvc/5.1.4.RELEASE/spring-webmvc-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-context/5.1.4.RELEASE/spring-context-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-expression/5.1.4.RELEASE/spring-expression-5.1.4.RELEASE.jar:/home/jli/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.14/tomcat-embed-jasper-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.14/tomcat-embed-core-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/tomcat-annotations-api/9.0.14/tomcat-annotations-api-9.0.14.jar:/home/jli/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.14/tomcat-embed-el-9.0.14.jar:/home/jli/.m2/repository/org/eclipse/jdt/ecj/3.15.0/ecj-3.15.0.jar:/home/jli/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.1.2.RELEASE/spring-boot-starter-test-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-test/2.1.2.RELEASE/spring-boot-test-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.1.2.RELEASE/spring-boot-test-autoconfigure-2.1.2.RELEASE.jar:/home/jli/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/home/jli/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/home/jli/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/home/jli/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/home/jli/.m2/repository/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar:/home/jli/.m2/repository/org/mockito/mockito-core/2.23.4/mockito-core-2.23.4.jar:/home/jli/.m2/repository/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar:/home/jli/.m2/repository/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar:/home/jli/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/home/jli/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/jli/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/jli/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/home/jli/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/jli/.m2/repository/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-jcl/5.1.4.RELEASE/spring-jcl-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-test/5.1.4.RELEASE/spring-test-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/xmlunit/xmlunit-core/2.6.2/xmlunit-core-2.6.2.jar:/home/jli/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.1.2.RELEASE/spring-boot-starter-jdbc-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-jdbc/5.1.4.RELEASE/spring-jdbc-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.1.2.RELEASE/spring-boot-starter-aop-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-aop/5.1.4.RELEASE/spring-aop-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/2.1.2.RELEASE/spring-boot-starter-data-jpa-2.1.2.RELEASE.jar:/home/jli/.m2/repository/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3.jar:/home/jli/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jli/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jli/.m2/repository/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar:/home/jli/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/jli/.m2/repository/org/javassist/javassist/3.23.1-GA/javassist-3.23.1-GA.jar:/home/jli/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/jli/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/home/jli/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/home/jli/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.4.Final/hibernate-commons-annotations-5.0.4.Final.jar:/home/jli/.m2/repository/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-orm/5.1.4.RELEASE/spring-orm-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-aspects/5.1.4.RELEASE/spring-aspects-5.1.4.RELEASE.jar:/home/jli/.m2/repository/org/springframework/boot/spring-boot-starter-cache/2.1.2.RELEASE/spring-boot-starter-cache-2.1.2.RELEASE.jar:/home/jli/.m2/repository/org/springframework/spring-context-support/5.1.4.RELEASE/spring-context-support-5.1.4.RELEASE.jar:/home/jli/.m2/repository/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar:/home/jli/.m2/repository/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0.jar:/home/jli/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/jli/.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar:/home/jli/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2.jar:/home/jli/.m2/repository/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar:/home/jli/.m2/repository/io/swagger/swagger-models/1.5.20/swagger-models-1.5.20.jar:/home/jli/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/home/jli/.m2/repository/io/springfox/springfox-spi/2.9.2/springfox-spi-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-core/2.9.2/springfox-core-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-schema/2.9.2/springfox-schema-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger-common/2.9.2/springfox-swagger-common-2.9.2.jar:/home/jli/.m2/repository/io/springfox/springfox-spring-web/2.9.2/springfox-spring-web-2.9.2.jar:/home/jli/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/jli/.m2/repository/com/fasterxml/classmate/1.4.0/classmate-1.4.0.jar:/home/jli/.m2/repository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar:/home/jli/.m2/repository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar:/home/jli/.m2/repository/org/mapstruct/mapstruct/1.2.0.Final/mapstruct-1.2.0.Final.jar:/home/jli/.m2/repository/io/springfox/springfox-swagger-ui/2.9.2/springfox-swagger-ui-2.9.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/jli"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2019-01-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-oracle"/>
+    <property name="file.separator" value="/"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="/home/jli/git/videriTest"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/jli/git/videriTest/target/surefire/surefirebooter17187843857839078646.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.2+9-LTS"/>
+    <property name="user.name" value="jli"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.0.0-36-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="localRepository" value="/home/jli/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="11.0.2"/>
+    <property name="user.dir" value="/home/jli/git/videriTest"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.2+9-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="test" classname="com.river.videriTest.repository.SuccessKillTest" time="0.021"/>
+  <testcase name="test2" classname="com.river.videriTest.repository.SuccessKillTest" time="0.063">
+    <error message="could not execute statement; SQL [n/a]; constraint [videri_UKj4e4d4ymcrvyrfftxbjnbjg4x]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement" type="org.springframework.dao.DataIntegrityViolationException">org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [videri_UKj4e4d4ymcrvyrfftxbjnbjg4x]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2-5146606765' for key 'videri_UKj4e4d4ymcrvyrfftxbjnbjg4x'
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+</error>
+    <system-out><![CDATA[14:52:43.207 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.river.videriTest.repository.SuccessKillTest]
+14:52:43.207 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.river.videriTest.repository.SuccessKillTest]
+14:52:43.207 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.207 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 43, missCount = 1]
+14:52:43.207 [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.support.DependencyInjectionTestExecutionListener.reinjectDependencies' -> true]].
+14:52:43.207 [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.support.DependencyInjectionTestExecutionListener.reinjectDependencies' -> true]]].
+14:52:43.207 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.207 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 44, missCount = 1]
+14:52:43.208 [main] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+14:52:43.208 [main] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+14:52:43.208 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.208 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 45, missCount = 1]
+14:52:43.208 [main] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - No method-level @Rollback override: using default rollback [true] for test context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]].
+14:52:43.208 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.river.videriTest.repository.SuccessKillTest.test2]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+14:52:43.209 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.209 [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+14:52:43.209 [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+14:52:43.209 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@335ff774]
+14:52:43.209 [main] INFO  o.s.t.c.t.TransactionContext - Began transaction (1) for test context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@6d71f296]; rollback [true]
+14:52:43.209 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.209 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 46, missCount = 1]
+14:52:43.210 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.210 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:52:43.210 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.210 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:52:43.211 [main] DEBUG org.hibernate.SQL - 
+    select
+        seckill0_.videri_id as videri_i1_1_0_,
+        seckill0_.create_time as create_t2_1_0_,
+        seckill0_.end_time as end_time3_1_0_,
+        seckill0_.name as name4_1_0_,
+        seckill0_.number as number5_1_0_,
+        seckill0_.start_time as start_ti6_1_0_ 
+    from
+        seckill seckill0_ 
+    where
+        seckill0_.videri_id=?
+Hibernate: 
+    select
+        seckill0_.videri_id as videri_i1_1_0_,
+        seckill0_.create_time as create_t2_1_0_,
+        seckill0_.end_time as end_time3_1_0_,
+        seckill0_.name as name4_1_0_,
+        seckill0_.number as number5_1_0_,
+        seckill0_.start_time as start_ti6_1_0_ 
+    from
+        seckill seckill0_ 
+    where
+        seckill0_.videri_id=?
+14:52:43.212 [main] DEBUG o.h.l.p.e.p.i.ResultSetProcessorImpl - Starting ResultSet row #0
+14:52:43.212 [main] DEBUG o.h.l.p.e.p.i.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+14:52:43.212 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - Resolving associations for [com.river.videriTest.domain.Seckill#2]
+14:52:43.212 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - Done materializing entity [com.river.videriTest.domain.Seckill#2]
+14:52:43.213 [main] DEBUG o.h.r.j.i.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+14:52:43.213 [main] DEBUG o.h.l.e.p.AbstractLoadPlanBasedEntityLoader - Done entity load : com.river.videriTest.domain.Seckill#2
+14:52:43.213 [main] DEBUG o.s.d.r.c.s.TransactionalRepositoryProxyPostProcessor$CustomAnnotationTransactionAttributeSource - Adding transactional method 'save' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+14:52:43.213 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.213 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:52:43.223 [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+Hibernate: 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+14:52:43.224 [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+Hibernate: 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+14:52:43.225 [main] DEBUG o.h.e.i.AbstractSaveEventListener - Generated identifier: 63, using strategy: org.hibernate.id.enhanced.SequenceStyleGenerator
+14:52:43.229 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.229 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:52:43.229 [main] DEBUG o.s.d.r.c.s.TransactionalRepositoryProxyPostProcessor$CustomAnnotationTransactionAttributeSource - Adding transactional method 'count' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+14:52:43.229 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(842748516<open>)] for JPA transaction
+14:52:43.229 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:52:43.230 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - parse() - HQL: select count(*) from com.river.videriTest.domain.SuccessKill x
+14:52:43.230 [main] DEBUG o.h.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+14:52:43.230 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'from'
+       |  \-[RANGE] Node: 'RANGE'
+       |     +-[DOT] Node: '.'
+       |     |  +-[DOT] Node: '.'
+       |     |  |  +-[DOT] Node: '.'
+       |     |  |  |  +-[DOT] Node: '.'
+       |     |  |  |  |  +-[IDENT] Node: 'com'
+       |     |  |  |  |  \-[IDENT] Node: 'river'
+       |     |  |  |  \-[IDENT] Node: 'videriTest'
+       |     |  |  \-[IDENT] Node: 'domain'
+       |     |  \-[IDENT] Node: 'SuccessKill'
+       |     \-[ALIAS] Node: 'x'
+       \-[SELECT] Node: 'select'
+          \-[COUNT] Node: 'count'
+             \-[ROW_STAR] Node: '*'
+
+14:52:43.231 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+14:52:43.231 [main] DEBUG o.h.h.internal.ast.tree.FromElement - FromClause{level=1} : com.river.videriTest.domain.SuccessKill (x) -> successkil0_
+14:52:43.231 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+14:52:43.231 [main] DEBUG o.h.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} ( count * ) ) ( FromClause{level=1} success_kill successkil0_ ) )
+14:52:43.231 [main] DEBUG o.h.h.i.ast.util.JoinProcessor - Using FROM fragment [success_kill successkil0_]
+14:52:43.232 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+14:52:43.232 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (success_kill)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[COUNT] CountNode: 'count'
+    |  |  \-[ROW_STAR] SqlNode: '*'
+    |  \-[SELECT_COLUMNS] SqlNode: ' as col_0_0_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[x], fromElementByTableAlias=[successkil0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'success_kill successkil0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=x,role=null,tableName=success_kill,tableAlias=successkil0_,origin=null,columns={,className=com.river.videriTest.domain.SuccessKill}}
+
+14:52:43.232 [main] DEBUG o.h.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+14:52:43.232 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - HQL: select count(*) from com.river.videriTest.domain.SuccessKill x
+14:52:43.232 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - SQL: select count(*) as col_0_0_ from success_kill successkil0_
+14:52:43.232 [main] DEBUG o.h.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+14:52:43.232 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+14:52:43.232 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+14:52:43.232 [main] DEBUG o.h.engine.internal.Collections - Collection found: [com.river.videriTest.domain.Seckill.successKills#2], was: [com.river.videriTest.domain.Seckill.successKills#2] (uninitialized)
+14:52:43.232 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 2 objects
+14:52:43.233 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+14:52:43.233 [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+14:52:43.233 [main] DEBUG o.h.internal.util.EntityPrinter - com.river.videriTest.domain.Seckill{number=200, successKills=<uninitialized>, createTime=2019-11-15 13:52:00.0, name=500mioashaipad2, startTime=2019-11-11 00:00:00.0, id=2, endTime=2019-11-12 00:00:00.0}
+14:52:43.242 [main] DEBUG o.h.internal.util.EntityPrinter - com.river.videriTest.domain.SuccessKill{seckill=com.river.videriTest.domain.Seckill#2, createTime=Tue Nov 19 14:52:43 EST 2019, userPhone=5146606765, id=63, state=0}
+14:52:43.242 [main] DEBUG org.hibernate.engine.spi.ActionQueue - Changes must be flushed to space: success_kill
+14:52:43.249 [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        success_kill
+        (create_time, seckill_id, state, user_phone, videri_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        success_kill
+        (create_time, seckill_id, state, user_phone, videri_id) 
+    values
+        (?, ?, ?, ?, ?)
+14:52:43.261 [main] DEBUG o.h.e.jdbc.spi.SqlExceptionHelper - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2-5146606765' for key 'videri_UKj4e4d4ymcrvyrfftxbjnbjg4x'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:974)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1113)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1381)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1046)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:50)
+	at org.hibernate.internal.SessionImpl.autoFlushIfRequired(SessionImpl.java:1415)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1501)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1537)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1505)
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1553)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.count(SimpleJpaRepository.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy109.count(Unknown Source)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl.getCount(SuccessKillServiceImpl.java:51)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$FastClassBySpringCGLIB$$17d5e2ab.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$EnhancerBySpringCGLIB$$354edc5f.getCount(<generated>)
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+14:52:43.262 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+14:52:43.262 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry '2-5146606765' for key 'videri_UKj4e4d4ymcrvyrfftxbjnbjg4x'
+14:52:43.263 [main] DEBUG o.h.r.t.b.j.i.JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:200)
+	at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:378)
+	at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1514)
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1553)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.count(SimpleJpaRepository.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy109.count(Unknown Source)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl.getCount(SuccessKillServiceImpl.java:51)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$FastClassBySpringCGLIB$$17d5e2ab.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$EnhancerBySpringCGLIB$$354edc5f.getCount(<generated>)
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+14:52:43.264 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating transaction failed - marking existing transaction as rollback-only
+14:52:43.264 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Setting JPA transaction on EntityManager [SessionImpl(842748516<open>)] rollback-only
+14:52:43.264 [main] DEBUG o.h.r.t.b.j.i.JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:200)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.setRollbackOnly(TransactionImpl.java:221)
+	at org.springframework.orm.jpa.JpaTransactionManager$JpaTransactionObject.setRollbackOnly(JpaTransactionManager.java:682)
+	at org.springframework.orm.jpa.JpaTransactionManager.doSetRollbackOnly(JpaTransactionManager.java:581)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:847)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:812)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:551)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:298)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy109.count(Unknown Source)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl.getCount(SuccessKillServiceImpl.java:51)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$FastClassBySpringCGLIB$$17d5e2ab.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$EnhancerBySpringCGLIB$$354edc5f.getCount(<generated>)
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+14:52:43.266 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating transaction failed - marking existing transaction as rollback-only
+14:52:43.266 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Setting JPA transaction on EntityManager [SessionImpl(842748516<open>)] rollback-only
+14:52:43.267 [main] DEBUG o.h.r.t.b.j.i.JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:200)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.setRollbackOnly(TransactionImpl.java:221)
+	at org.springframework.orm.jpa.JpaTransactionManager$JpaTransactionObject.setRollbackOnly(JpaTransactionManager.java:682)
+	at org.springframework.orm.jpa.JpaTransactionManager.doSetRollbackOnly(JpaTransactionManager.java:581)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:847)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:812)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:551)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:298)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.river.videriTest.service.dao.impl.SuccessKillServiceImpl$$EnhancerBySpringCGLIB$$354edc5f.getCount(<generated>)
+	at com.river.videriTest.repository.SuccessKillTest.test2(SuccessKillTest.java:20)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+14:52:43.267 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.267 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 47, missCount = 1]
+14:52:43.267 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.267 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 48, missCount = 1]
+14:52:43.267 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.267 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 49, missCount = 1]
+14:52:43.269 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+14:52:43.269 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@555b3ec9 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 50, missCount = 1]
+14:52:43.269 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction rollback
+14:52:43.269 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Rolling back JPA transaction on EntityManager [SessionImpl(842748516<open>)]
+14:52:43.269 [main] DEBUG o.h.e.t.internal.TransactionImpl - rolling back
+14:52:43.270 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(842748516<open>)] after transaction
+14:52:43.270 [main] INFO  o.s.t.c.t.TransactionContext - Rolled back transaction for test: [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [videri_UKj4e4d4ymcrvyrfftxbjnbjg4x]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement, mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+14:52:43.270 [main] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - After test method: context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [videri_UKj4e4d4ymcrvyrfftxbjnbjg4x]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement, mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+14:52:43.271 [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test context [DefaultTestContext@29f58b44 testClass = SuccessKillTest, testInstance = com.river.videriTest.repository.SuccessKillTest@15ec3c0c, testMethod = test2@SuccessKillTest, testException = org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [videri_UKj4e4d4ymcrvyrfftxbjnbjg4x]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement, mergedContextConfiguration = [WebMergedContextConfiguration@fcee97c testClass = SuccessKillTest, locations = '{}', classes = '{class com.river.videriTest.App, class com.river.videriTest.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55de24cc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@20b2475a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3aa078fd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]].
+]]></system-out>
+  </testcase>
+</testsuite>

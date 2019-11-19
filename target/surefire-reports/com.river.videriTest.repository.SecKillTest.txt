@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.river.videriTest.repository.SecKillTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.291 s <<< FAILURE! - in com.river.videriTest.repository.SecKillTest
+testExcuteSeckill(com.river.videriTest.repository.SecKillTest)  Time elapsed: 0.034 s  <<< ERROR!
+com.river.videriTest.service.exception.SeckillCloseException: seckill is already closed... 
+	at com.river.videriTest.repository.SecKillTest.testExcuteSeckill(SecKillTest.java:71)
+

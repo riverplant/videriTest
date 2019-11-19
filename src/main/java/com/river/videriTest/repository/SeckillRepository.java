@@ -4,13 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
 import com.river.videriTest.domain.Seckill;
 
 @Repository
-public interface SeckillRepository extends JpaRepository<Seckill, Long>{
+public interface SeckillRepository extends JpaRepository<Seckill, Long>, JpaSpecificationExecutor<Seckill>{
     
     @Modifying
     @Query( value ="update seckill set number = number-1 where videri_id = ?1 and start_time <= ?2 and end_time >= ?2 and number > 0" , nativeQuery = true)

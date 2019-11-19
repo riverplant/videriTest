@@ -1,6 +1,9 @@
 package com.river.videriTest.service.dao;
 
+import org.springframework.data.domain.Page;
+
 import com.river.videriTest.domain.SuccessKill;
+import com.river.videriTest.dto.SuccessKillQueryConditon;
 
 /**
  * 记录购买明细
@@ -33,5 +36,5 @@ public interface SuccesskillService {
     
     int insertIgnore(int state, long user_phone, long seckill_id);
 
-
+    Page<SuccessKill> queryWithConditions(Integer page, Integer size, final SuccessKillQueryConditon successKillQueryConditon);
 }
