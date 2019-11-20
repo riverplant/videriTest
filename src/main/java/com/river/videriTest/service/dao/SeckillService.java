@@ -2,6 +2,7 @@ package com.river.videriTest.service.dao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
@@ -65,4 +66,12 @@ public interface SeckillService {
      */
     SeckillExecution executeSeckill(long seckillId, long userPhone, String md5)
     throws SeckillException, RepeatKillException, SeckillCloseException;
+    
+   /**
+    * 通过存储过程执行秒杀
+    * @param paramMap
+    * @param md5: 使用相同算法用户传入的md5做验证比较,如果验证失败, 拒绝秒杀
+    * @return
+    */
+    SeckillExecution executeSeckillProcedure(Map<String,Object> paramMap, String md5);
 }

@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import com.river.videriTest.domain.Seckill;
 import com.river.videriTest.dto.Exposer;
 import com.river.videriTest.dto.SeckillExecution;
+import com.river.videriTest.enums.SeckillStatEnum;
 import com.river.videriTest.service.dao.SeckillService;
 
 
@@ -70,6 +71,14 @@ public class SecKillTest extends BaseTest {
         
         SeckillExecution seckillExecution = seckillService.executeSeckill(id, phone, md5);
         log.info("result = {} ", seckillExecution);
+    }
+    
+    @Test
+    public void testexecuteSeckillProcedure() throws ParseException{
+        long id = 77;
+        long phone = 5146606765L;   
+        int result = seckillRepository.execute_seckill(id, phone, SeckillStatEnum.SUCCESS.getState(), new Date());
+        log.info("result = {} ", result);
     }
     
 }

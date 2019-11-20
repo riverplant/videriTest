@@ -2,6 +2,7 @@ package com.river.videriTest.service.dao.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,7 @@ import com.river.videriTest.enums.SeckillStatEnum;
 import com.river.videriTest.repository.SeckillRepository;
 import com.river.videriTest.repository.SuccesskillRepository;
 import com.river.videriTest.service.dao.SeckillService;
+import com.river.videriTest.service.dao.cache.RedisDao;
 import com.river.videriTest.service.exception.RepeatKillException;
 import com.river.videriTest.service.exception.SeckillCloseException;
 import com.river.videriTest.service.exception.SeckillException;
@@ -31,8 +33,12 @@ import com.river.videriTest.service.exception.SeckillException;
 public class SeckillServiceImpl implements SeckillService {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
-    @Autowired private SeckillRepository seckillRepository;
-    @Autowired private SuccesskillRepository successkillRepository;
+    @Autowired
+    private SeckillRepository seckillRepository;
+    @Autowired
+    private SuccesskillRepository successkillRepository;
+    @Autowired
+    private RedisDao redisDao;
     // md5 salt
     private final String salt = "safqwreqae@rqwe33@dsafsea!asdhjkluio";
 
@@ -48,10 +54,10 @@ public class SeckillServiceImpl implements SeckillService {
 
     @Override
     public List<Seckill> queryAll(int offset, int limit) {
-        if(offset < 0 && limit < 0) {
-            return  seckillRepository.findAll();
-        }else {
-            return seckillRepository.queryAll(offset, limit); 
+        if (offset < 0 && limit < 0) {
+            return seckillRepository.findAll();
+        } else {
+            return seckillRepository.queryAll(offset, limit);
         }
     }
 
@@ -63,9 +69,15 @@ public class SeckillServiceImpl implements SeckillService {
 
     @Override
     public Exposer exportSeckillUrl(long seckillId) {
-        Seckill seckill = queryById(seckillId);
+        Seckill seckill = redisDao.getSeckill(seckillId);
         if (seckill == null) {
-            return new Exposer(false, seckillId);
+            // 优化点:缓存优化
+            seckill = queryById(seckillId);
+            if (seckill == null) {
+                return new Exposer(false, seckillId);
+            } else {
+                redisDao.putSecKill(seckill);
+            }
         }
         Date startTime = seckill.getStartTime();
         Date endTime = seckill.getEndTime();
@@ -86,7 +98,7 @@ public class SeckillServiceImpl implements SeckillService {
     private String getMD5(long seckillId) {
         String base = seckillId + "/" + salt;
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        System.out.println("md5="+md5);
+        System.out.println("md5=" + md5);
         return md5;
     }
 
@@ -95,8 +107,7 @@ public class SeckillServiceImpl implements SeckillService {
      * 确保事务方法的执行时间经可能短,不要穿插其他网络操作(RPC/HTTP请求)或者拨开到事务方法外部(创建更上层方法)
      * 如果只有一条修改操作,或者只读操作,不需要事务.(两条以上修改操作需要事务)
      */
-    public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) 
-            throws SeckillException, RepeatKillException, SeckillCloseException {
+    public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws SeckillException, RepeatKillException, SeckillCloseException {
 
         if (md5 == null || !md5.equals(getMD5(seckillId))) {
             throw new SeckillException("seckill data rewrite...");
@@ -104,33 +115,43 @@ public class SeckillServiceImpl implements SeckillService {
         // 执行秒杀逻辑
         Date now = new Date();
         try {
-            int updateCOunt = reduceNumber(seckillId, now);
-            if (updateCOunt <= 0) {
-                // 没有更新记录, 秒杀结束
-                throw new SeckillCloseException("seckill is already closed... ");
+            // 记录购买行为
+            int insertCount = successkillRepository.insertIgnore(SeckillStatEnum.SUCCESS.getState(), userPhone, seckillId);
+            if (insertCount <= 0) {
+                // TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+                throw new RepeatKillException("seckill repeated...");// 重复秒杀
             } else {
-                // 记录购买行为
-                int insertCount = successkillRepository.insertIgnore(SeckillStatEnum.SUCCESS.getState(), userPhone, seckillId);
-                if (insertCount <= 0) {
-                    //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-                    // 重复秒杀
-                    throw new RepeatKillException("seckill repeated...");
+                //减库存,热点商品竞争!!!!!!!!!!!!!!!
+                int updateCOunt = reduceNumber(seckillId, now);
+                if (updateCOunt <= 0) {
+                    // 没有更新记录, 秒杀结束
+                    throw new SeckillCloseException("seckill is already closed... ");
                 } else {
                     // 秒杀成功
                     SuccessKill successKill = successkillRepository.queryByIdWithSeckill(seckillId, userPhone);
-                    return new SeckillExecution(seckillId, SeckillStatEnum.SUCCESS,successKill);
+                    return new SeckillExecution(seckillId, SeckillStatEnum.SUCCESS, successKill);
                 }
             }
         } catch (SeckillCloseException e1) {
             throw e1;
         } catch (RepeatKillException e2) {
-//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            // TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             throw e2;
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             // 编译异常转换成运行异常,实现错误情况下事务自动回滚!!!!!!!!!
             throw new SeckillException("seckill inner error:" + e.getMessage());
         }
+    }
+
+    @Override
+    public SeckillExecution executeSeckillProcedure(Map<String, Object> paramMap, String md5) {
+//        if (md5 == null || !md5.equals(getMD5(seckillId))) {
+//            return new SeckillExecution(seckillId, SeckillStatEnum.DATA_REWRITE);
+//        }
+     // 执行秒杀逻辑
+        Date now = new Date();
+        return null;
     }
 
 
