@@ -27,6 +27,4 @@ public interface SeckillRepository extends JpaRepository<Seckill, Long>, JpaSpec
     @Procedure(name = "execute_seckill")
     int executeSeckill(@Param("v_seckill_id") long seckillId, @Param("v_phone") long phone, @Param("v_state") int state, @Param("v_kill_time") Date killTime );
     
-    @Query(value = " call execute_seckill(:inParam1,:inParam2,:inParam3,:inParam4,:inParam5)", nativeQuery = true)
-    int execute_seckill2(@Param("inParam1") long seckillId,@Param("inParam2") long phone,@Param("inParam3") int state,@Param("inParam4") Date killTime, @Param("inParam5") int result);
 }

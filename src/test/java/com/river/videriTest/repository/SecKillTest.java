@@ -81,12 +81,5 @@ public class SecKillTest extends BaseTest {
         log.info("result = {} ", result);
     }
     
-    @Test
-    public void testexecuteSeckillProcedure2() throws ParseException{
-        long id = 77;
-        long phone = 5146606765L;    int result = 0;
-       seckillRepository.execute_seckill2(id, phone, SeckillStatEnum.SUCCESS.getState(), new Date(), result);
-        log.info("result = {} ", result);
-    }
     
 }
