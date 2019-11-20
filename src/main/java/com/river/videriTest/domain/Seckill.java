@@ -8,7 +8,11 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 /**
@@ -20,6 +24,15 @@ import javax.persistence.UniqueConstraint;
 @Table(name="seckill", 
     uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})},
      indexes = {@Index(name="idx_start_time",columnList = "start_time"),@Index(name="idx_end_time",columnList = "end_time"),@Index(name="idx_create_time",columnList = "create_time")})
+@NamedStoredProcedureQueries({
+    @NamedStoredProcedureQuery(name = "execute_seckill", procedureName = "execute_seckill", parameters = {
+            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_seckill_id", type = Long.class),
+            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_phone", type = Long.class),
+            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_state", type = Integer.class),
+            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_kill_time", type = Date.class),
+            @StoredProcedureParameter(mode = ParameterMode.OUT, name = "r_result", type = Integer.class),
+            }) 
+    })
 public class Seckill extends DomainImpl{
 
     private static final long serialVersionUID = 1L;

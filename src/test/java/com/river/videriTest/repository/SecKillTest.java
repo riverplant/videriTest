@@ -77,7 +77,15 @@ public class SecKillTest extends BaseTest {
     public void testexecuteSeckillProcedure() throws ParseException{
         long id = 77;
         long phone = 5146606765L;   
-        int result = seckillRepository.execute_seckill(id, phone, SeckillStatEnum.SUCCESS.getState(), new Date());
+        int result = seckillRepository.executeSeckill(id, phone, SeckillStatEnum.SUCCESS.getState(), new Date());
+        log.info("result = {} ", result);
+    }
+    
+    @Test
+    public void testexecuteSeckillProcedure2() throws ParseException{
+        long id = 77;
+        long phone = 5146606765L;    int result = 0;
+       seckillRepository.execute_seckill2(id, phone, SeckillStatEnum.SUCCESS.getState(), new Date(), result);
         log.info("result = {} ", result);
     }
     

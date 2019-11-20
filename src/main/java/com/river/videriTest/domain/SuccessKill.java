@@ -8,10 +8,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedStoredProcedureQueries;
-import javax.persistence.NamedStoredProcedureQuery;
-import javax.persistence.ParameterMode;
-import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 /**
@@ -23,15 +19,6 @@ import javax.persistence.UniqueConstraint;
 @Table(name="success_kill", 
     uniqueConstraints = {@UniqueConstraint(columnNames = {"seckill_id","user_phone"})},
      indexes = {@Index(name="idx_create_time",columnList = "create_time")})
-@NamedStoredProcedureQueries({
-    @NamedStoredProcedureQuery(name = "execute_seckill", procedureName = "jieTest.execute_seckill", parameters = {
-            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_seckill_id", type = Long.class),
-            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_phone", type = Long.class),
-            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_state", type = Integer.class),
-            @StoredProcedureParameter(mode = ParameterMode.IN, name = "v_kill_time", type = Date.class),
-            @StoredProcedureParameter(mode = ParameterMode.OUT, name = "r_result", type = Integer.class),
-            }) 
-    })
 public class SuccessKill extends DomainImpl{
 
     private static final long serialVersionUID = 1164382651158317079L;
